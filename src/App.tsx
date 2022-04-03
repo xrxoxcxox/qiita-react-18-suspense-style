@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import "./App.css";
 
 async function fetchData(): Promise<string> {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return (Math.random() * 1000).toFixed(0);
 }
 
@@ -48,7 +48,11 @@ function DataLoader() {
       <li>Zulu</li>
     </ul>
   );
-};
+}
+
+function Fallback() {
+  return <div className="fallback"></div>;
+}
 
 function App() {
   return (
@@ -99,7 +103,7 @@ function App() {
         </section>
         <section className="panel">
           <h2 className="panel-headline">grault garply</h2>
-          <Suspense fallback={<p className="panel-text">Loading...</p>}>
+          <Suspense fallback={<Fallback />}>
             <DataLoader />
           </Suspense>
         </section>

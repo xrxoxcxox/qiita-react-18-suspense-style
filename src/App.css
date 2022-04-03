@@ -56,3 +56,18 @@
   margin-top: 1rem;
   padding-left: 1.5rem;
 }
+
+.fallback {
+  width: 4rem;
+  height: 4rem;
+  border: 0.5rem #ddd solid;
+  border-top: 0.5rem #55c500 solid;
+  border-radius: 50%;
+  animation: fallback-animation 800ms infinite linear;
+}
+
+@keyframes fallback-animation {
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
