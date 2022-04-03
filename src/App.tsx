@@ -15,7 +15,7 @@ function useData(): string {
   return data;
 }
 
-function DataLoader(): JSX.Element {
+function DataLoader() {
   const data = useData();
   return (
     <ul className="panel-list">
