@@ -54,6 +54,14 @@ function Fallback() {
   return <div className="fallback"></div>;
 }
 
+function LayoutedFallback() {
+  return (
+    <div className="fallback-contaner">
+      <Fallback />
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className="container">
@@ -103,7 +111,7 @@ function App() {
         </section>
         <section className="panel">
           <h2 className="panel-headline">grault garply</h2>
-          <Suspense fallback={<Fallback />}>
+          <Suspense fallback={<LayoutedFallback />}>
             <DataLoader />
           </Suspense>
         </section>
